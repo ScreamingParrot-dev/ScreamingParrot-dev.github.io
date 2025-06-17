@@ -31,35 +31,18 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100vh; /* Основное значение */
+    height: 100dvh; /* Для современных браузеров */
+    min-height: -webkit-fill-available; /* Фикс для iOS */
     background-image: url('mediacontent/background2.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: scroll; /* Замените fixed на scroll! */
     z-index: -2;
-
+    transform: translateZ(0); /* Аппаратное ускорение */
 }
 
-@supports (-webkit-touch-callout: none) {
-    .static-bg {
-        position: absolute; /* Меняем fixed на absolute */
-        height: 100%;
-        min-height: -webkit-fill-available;
-    }
-
-    .bottom-bg {
-        position: absolute; /* Меняем fixed на absolute */
-        height: 80%;
-        min-height: -webkit-fill-available;
-    }
-  
-    body {
-        position: relative;
-        height: 100vh;
-        overflow-x: hidden;
-    }
-}
 
 .top {
     display: flex;
@@ -73,7 +56,7 @@ body {
 
 .top h3 {
     font-weight: 300;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .names {
@@ -136,7 +119,7 @@ body {
 
 .intro p {
     font-weight: 300;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 100%;
     text-align: center;
     color: black;
@@ -166,7 +149,7 @@ body {
     height: auto;
     position: relative;
     transform: translateY(0);
-    animation: feather-drop 4s ease-in forwards;
+    animation: feather-drop 10s ease-in forwards;
     animation-play-state: paused;
 }
 
@@ -213,7 +196,7 @@ body {
 }
 
 .event-desc {
-    font-size: 12px;
+    font-size: 14px;
     color: black;
 }
 
@@ -245,8 +228,8 @@ body {
 .dress-text {
     text-align: center;
     margin: auto;
-    max-width: 272px;
-    font-size: 14px;
+    max-width: 350px;
+    font-size: 18px;
     font-weight: 300;
 
 }
@@ -280,7 +263,7 @@ body {
     text-align: center;
     margin: auto;
     max-width: 272px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 300;
 
 }
@@ -322,7 +305,7 @@ body {
 
 .tips-content p {
     margin: 0;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 133%;
     font-weight: 300;
 }
@@ -342,7 +325,7 @@ body {
 }
 
 .place-container {
-    max-width: 372px;
+    max-width: 400px;
     width: 100%;
     margin: 52px auto;
     padding: 20px;
@@ -359,7 +342,7 @@ body {
 
 .place-name,
 .place-address {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
     line-height: 1.4;
     text-align: left;
@@ -394,7 +377,7 @@ body {
     text-align: center;
     margin: auto;
     max-width: 272px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
 }
 
@@ -451,7 +434,7 @@ body {
 }
 
 .poll p {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 300;
     margin-bottom: 56px;
     margin-top: 36px;
@@ -459,7 +442,7 @@ body {
 
 .poll label {
     display: block;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     margin-top: 33px;
     margin-bottom: 5px;
@@ -482,7 +465,7 @@ body {
     border: 1px solid black;
     background: transparent;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -529,7 +512,11 @@ body {
     0% {
         transform: translateY(0) rotate(0deg);
     }
+    90% {
+        opacity: 0.5;
+    }
     100% {
-        transform: translateY(330px) rotate(195deg);
+        transform: translateY(1300px) rotate(195deg);
+        opacity: 0;
     }
 }
