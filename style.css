@@ -47,6 +47,12 @@ body {
         height: 100%;
         min-height: -webkit-fill-available;
     }
+
+    .bottom-bg {
+        position: absolute; /* Меняем fixed на absolute */
+        height: 80%;
+        min-height: -webkit-fill-available;
+    }
   
     body {
         position: relative;
