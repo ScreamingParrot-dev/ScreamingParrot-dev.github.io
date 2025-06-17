@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.program-container, .intro, .dress, .tips-text, .tips-block, .place-container, .important');
+  const elements = document.querySelectorAll('.program-container, .intro, .dress, .tips-text, .tips-block, .place-container, .important, .ornament1, .ornament2, .rings');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
