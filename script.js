@@ -36,9 +36,3 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(container);
   });
 });
-
-function fixVH() {
-  document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
-}
-fixVH();
-window.addEventListener('resize', fixVH);
