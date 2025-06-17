@@ -9,6 +9,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
 </head>
+<script>
+if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+    document.documentElement.style.height = '100%';
+    document.body.style.height = '100%';
+  
+    window.addEventListener('scroll', function() {
+        requestAnimationFrame(function() {
+            document.documentElement.style.height = window.innerHeight + 'px';
+        });
+    });
+}
+</script>
 <body>
     <!-- Статичная фоновая картинка (фиксированная) -->
     <div class="static-bg" id="bg1">
