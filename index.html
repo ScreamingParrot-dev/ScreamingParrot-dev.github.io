@@ -183,10 +183,41 @@
                 <button type="submit">Отправить</button>
             </form>
 
+            <script>
+                document.getElementById('invitation-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                submitForm();
+                });
+
+                function submitForm() {
+                    const formData = {
+                    name: document.getElementById('name').value,
+                    attendance: document.getElementById('attendance').value
+                    };
+
+                    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzs0CZ9xR1v_36_o__HqHY3zRjF046A0I_66et0oEY04z2wGd8aOOsxdw_CL1Mj8DUS8w/exec?callback=handleResponse';
+                    const urlWithParams = `${scriptUrl}&${new URLSearchParams(formData).toString()}`;
+
+                    const script = document.createElement('script');
+                    script.src = urlWithParams;
+                    document.body.appendChild(script);
+                }
+
+                function handleResponse(response) {
+                    if (response.success) {
+                        alert('Данные сохранены!');
+                    } else {
+                        alert('Ошибка: ' + response.message);
+                    }
+                }
+            </script>
+
             <h1>Дмитрий и Виктория</h1>
         </div>
     </footer>
 </body>
 </html>
+
+
 
 <script src="script.js"></script>
