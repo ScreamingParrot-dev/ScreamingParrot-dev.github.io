@@ -17,14 +17,16 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100dvh;
+    height: 100vh; /* Основное значение */
+    height: 100dvh; /* Для современных браузеров */
+    min-height: -webkit-fill-available; /* Фикс для iOS */
     background-image: url('mediacontent/background2.png');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll; /* Замените fixed на scroll! */
     z-index: -2;
-    transition: height 999999s;
+    transform: translateZ(0); /* Аппаратное ускорение */
 }
 
 .top {
