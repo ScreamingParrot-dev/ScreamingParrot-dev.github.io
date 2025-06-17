@@ -1,3 +1,12 @@
+function resizeBackground() {
+  var extraHeight = 60; // Добавляем немного свободного пространства для компенсации изменяемости адресной строки
+  document.getElementById('bg1').style.height = window.innerHeight + extraHeight + "px";
+  document.getElementById('bg2').style.height = window.innerHeight + extraHeight + "px";
+}
+
+window.addEventListener('resize', resizeBackground); // Отслеживаем изменения размеров окна
+resizeBackground();
+
 document.addEventListener('DOMContentLoaded', () => {
   const elements = document.querySelectorAll('.program-container, .intro, .dress, .tips-text, .tips-block, .place-container, .important');
 
