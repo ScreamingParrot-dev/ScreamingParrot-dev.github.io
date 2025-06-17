@@ -39,12 +39,21 @@ body {
     background-attachment: scroll;
     z-index: -2;
 
-    @supports (-webkit-touch-callout: none) {
-        height: -webkit-fill-available;
-    }
-
 }
 
+@supports (-webkit-touch-callout: none) {
+    .static-bg {
+        position: absolute; /* Меняем fixed на absolute */
+        height: 100%;
+        min-height: -webkit-fill-available;
+    }
+  
+    body {
+        position: relative;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+}
 
 .top {
     display: flex;
