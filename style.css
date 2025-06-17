@@ -8,9 +8,23 @@ body {
     position: relative;
     min-height: 100vh;
     min-height: 100dvh;
-    font-family: "Noto Sans", sans-serif;
     overflow-x: hidden;
+    font-family: "Noto Sans", sans-serif;
 }
+
+/* .static-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-image: url('mediacontent/background2.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -2;
+} */
 
 .static-bg {
     position: fixed;
@@ -28,6 +42,7 @@ body {
     z-index: -2;
     transform: translateZ(0); /* Аппаратное ускорение */
 }
+
 
 .top {
     display: flex;
@@ -391,12 +406,10 @@ body {
     width: 100%;
     height: 80dvh;
     background-size: cover;
-    background-attachment: fixed;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: height 999999s;
 }
 
 .poll {
