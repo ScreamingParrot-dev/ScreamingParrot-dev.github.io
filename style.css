@@ -43,7 +43,6 @@ body {
         height: -webkit-fill-available;
     }
 
-    height: calc(var(--vh, 1vh) * 100);
 }
 
 
